@@ -37,7 +37,7 @@ public class SeqToFileApp {
         return seqType != null && from >= 0 && to >= 0;
     }
 
-    protected boolean wirteSeq() {
+    protected boolean writeSeq() {
         return SequenceTools.writeToFile(seqType.getGenerator(),
                 from, to, fileName);
     }
@@ -49,7 +49,7 @@ public class SeqToFileApp {
                     + "Legal usage: seqName from to fileName");
             return;
         }
-        if (!wirteSeq()) {
+        if (!writeSeq()) {
             System.out.println("!Write to the file: "
                     + fileName + " FAILED");
             return;
