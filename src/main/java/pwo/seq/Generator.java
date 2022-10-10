@@ -29,7 +29,9 @@ abstract class Generator implements SequenceGenerator {
         if (i < 0) {
             throw new IllegalArgumentException();
         }
-        if (i < lastIndex) {
+        if (i == (lastIndex - 2)) {
+            previousTerm();
+        } else if (i < lastIndex) {
             reset();
         }
         while (lastIndex <= i) {
